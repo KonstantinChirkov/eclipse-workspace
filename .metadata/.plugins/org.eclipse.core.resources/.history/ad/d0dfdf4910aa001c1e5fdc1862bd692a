@@ -1,0 +1,27 @@
+
+public class StudentOrderSave 
+{
+	public static void main(String[] args) {
+		startAll();
+	}
+	
+	public static void startAll() {
+		StudentOrder so1;
+		so1 = new StudentOrder();
+		
+		so1.husband.firstName = "Petya";
+		so1.husband.lastName = "Smith";
+		so1.husband.age = 17;
+		so1.wife.firstName = "Lola";
+		so1.wife.lastName = "Coca-Cola";
+		so1.wife.age = 15;		
+		
+		saveStudentOrder(so1);
+	}
+	
+	public static void saveStudentOrder(StudentOrder studentOrder) {
+		System.out.println("Husband: " + studentOrder.husband.firstName + " " + studentOrder.husband.lastName + ", age: " 
+	+ studentOrder.husband.age + "\nWife:" + studentOrder.wife.firstName + " " + studentOrder.wife.lastName + ", age: " 
+	+ studentOrder.wife.age);
+	}
+}

@@ -1,0 +1,76 @@
+import java.util.Scanner;
+
+public class StudentOrderSave 
+{
+	public static void main(String[] args) {
+		startAll();
+	}
+	
+	public static void startAll() {
+		System.out.println("Do you want to create new student order? \n(y/n)");
+		Scanner scanner = new Scanner(System.in);
+		
+		String ans = scanner.nextLine();
+		System.out.println(ans);
+		System.out.println(ans.equals("y") || ans.equals("Y") || ans.equals("yes") || ans.equals("Yes") || ans.equals("YES"));
+		if  (false) {
+			StudentOrder so;
+			do {
+				so = scannerSO();			
+				System.out.println("Do you want to create new student order? \n(y/n)");
+				ans = scanner.nextLine();
+				
+			}
+			while (ans.equals("y") || ans.equals("Y"));
+			saveStudentOrder(so);
+		}
+
+		
+		/*		StudentOrder so1;
+		so1 = new StudentOrder();
+		
+		so1.husband.firstName = "Petya";
+		so1.husband.lastName = "Smith";
+		so1.husband.age = 17;
+		so1.wife.firstName = "Lola";
+		so1.wife.lastName = "Coca-Cola";
+		so1.wife.age = 15;		*/
+		
+		
+	}
+	
+	public static StudentOrder scannerSO() {
+		StudentOrder so = new StudentOrder();
+		Scanner scanner = new Scanner(System.in);
+		
+		System.out.println("What is husband's first name?");
+		so.husband.firstName = scanner.nextLine();
+		
+		System.out.println("What is husband's last name?");
+		so.husband.lastName = scanner.nextLine();
+		
+		System.out.println("What is husband's years old?");
+		so.husband.age = scanner.nextInt();
+		scanner.nextLine();
+		
+		System.out.println("What is wife's first name?");
+		so.wife.firstName = scanner.nextLine();
+		
+		System.out.println("What is wife's last name?");
+		so.wife.lastName = scanner.nextLine();
+		
+		System.out.println("What is wife's years old?");
+		so.wife.age = scanner.nextInt();
+		scanner.nextLine();
+		
+		return so;
+		
+	}
+	
+	public static void saveStudentOrder(StudentOrder studentOrder) {
+		System.out.println("Husband: " + studentOrder.husband.firstName + " " + studentOrder.husband.lastName 
+				+ ", age: " + studentOrder.husband.age);
+		System.out.println("Wife: " + studentOrder.wife.firstName + " " + studentOrder.wife.lastName 
+				+ ", age: " + studentOrder.wife.age);
+	}
+}
